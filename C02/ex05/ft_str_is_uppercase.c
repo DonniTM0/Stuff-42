@@ -12,26 +12,25 @@
 
 #include <stdio.h>
 
-int	ft_str_is_uppercase(char *str)
+int	ft_str_is_lowercase(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] < 33 || str[i] > 126)
+		if (str[i] < 'A' || str[i] > 'Z')
 			return (0);
 		i++;
 	}
 	return (1);
 }
-
+/*
 int	main()
 {
-	char *str1 = "!@$%";
-	char *str2 = "$&$%^4";
-	char *str3 = "asg75";
-	char *str4 = " ";
+	char *str1 = "bruh";
+	char *str2 = "BRUH";
+	char *str3 = "Bruh";
 	char *str4 = "";
 
 	printf(" '%s' %d\n", str1, ft_str_is_lowercase(str1));
@@ -40,4 +39,4 @@ int	main()
     printf(" '%s' %d\n", str4, ft_str_is_lowercase(str4));
 
 	return 0;
-}
+}*/

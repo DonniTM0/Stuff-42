@@ -1,43 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmisini <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/16 16:26:07 by dmisini           #+#    #+#             */
-/*   Updated: 2023/07/16 16:55:36 by dmisini          ###   ########.fr       */
+/*   Created: 2023/07/17 14:36:16 by dmisini           #+#    #+#             */
+/*   Updated: 2023/07/17 14:51:42 by dmisini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_str_is_uppercase(char *str)
+char	*ft_strlowcase(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] < 33 || str[i] > 126)
-			return (0);
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] = str[i] - 32;
 		i++;
 	}
-	return (1);
+	return (str);
 }
 /*
 int	main()
 {
-	char	*str1 = "!@$%";
-	char	*str2 = "$&(%^/";
-	char	*str3 = "asg75";
-	char	*str4 = " ";
-	char	*str5 = "";
+	char str1[] = "hello";
+	char str2[] = "Hello";
+	char str3[] = "HELLO";
+	char str4[] = "";
 
-	printf(" '%s' %d\n", str1, ft_str_is_uppercase(str1));
-	printf(" '%s' %d\n", str2, ft_str_is_uppercase(str2));
-	printf(" '%s' %d\n", str3, ft_str_is_uppercase(str3));
-	printf(" '%s' %d\n", str4, ft_str_is_uppercase(str4));
-	printf(" '%s' %d\n", str5, ft_str_is_uppercase(str5));
-	return 0;
+	printf("Original: %s Lowercase: %s\n", str1, ft_strlowcase(str1));
+	printf("Original: %s Lowercase: %s\n", str2, ft_strlowcase(str1));
+	printf("Original: %s Lowercase: %s\n", str3, ft_strlowcase(str1));
+	printf("Original: %s Lowercase: %s\n", str4, ft_strlowcase(str1));
+
+    return 0;
 }*/
